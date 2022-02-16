@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style3.css">
+</head>
+
+<body>
+    
+    <header>
+        <div id='stars'></div>
+        <div id='stars2'></div>
+        <div id='stars3'></div>
+        
+        <div id='title' class="text-boxxv">
+            <span  >
+                Choose Image
+            </span>
+           
+
+        </div>
+        
+    </header>
+
+   
+    
+        <input id="fileupload" type="file" >
+    
+    <b>Live Preview</b>
+    
+    <div id="dvPreview">
+    </div>
+
+    <img id="fcit" src="fcit.png" >
+
+
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+    <script language="javascript" type="text/javascript">
+        $(function () {
+            $("#fileupload").change(function () {
+                $("#dvPreview").html("");
+                var regex = /^([a-zA-Z0-9\s_\\.\-:])+(.jpg|.jpeg|.gif|.png|.bmp)$/;
+                if (regex.test($(this).val().toLowerCase())) {
+                    if ($.browser.msie && parseFloat(jQuery.browser.version) <= 9.0) {
+                        $("#dvPreview").show();
+                        $("#dvPreview")[0].filters.item("DXImageTransform.Microsoft.AlphaImageLoader").src = $(this).val();
+                    }
+                    else {
+                        if (typeof (FileReader) != "undefined") {
+                            $("#dvPreview").show();
+                            $("#dvPreview").append("<img />");
+                            var reader = new FileReader();
+                            reader.onload = function (e) {
+                                $("#dvPreview img").attr("src", e.target.result);
+                            }
+                            reader.readAsDataURL($(this)[0].files[0]);
+                        } else {
+                            alert("This browser does not support FileReader.");
+                        }
+                    }
+                } else {
+                    alert("Please upload a valid image file.");
+                }
+            });
+        });
+    </script>
+
+
+    <div class="text-box">
+        <a href="https://cpit405.gitlab.io/" class="btn btn-white btn-animate">Submit</a>
+    </div>
+
+    <div class="text-box1">
+        <a href="2.html" class="btn btn-white btn-animate">Page 2</a>
+    </div>
+
+
+
+
+
+</body>
+
+</html>

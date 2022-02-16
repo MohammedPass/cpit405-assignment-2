@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style2.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+</head>
+
+
+<body>
+    <input  type="text" id="search" onkeyup="search()" placeholder="Enter something to filter">
+
+    <header>
+        <div id='stars'></div>
+        <div id='stars2'></div>
+        <div id='stars3'></div>
+
+        <div id='title' class="text-boxxv">
+            <span  >
+                Filter
+            </span>
+            
+
+        </div>
+    </header>
+
+
+
+    <img id="fcit" src="fcit.png" >
+
+
+    <!--==========-->
+    <section>
+
+
+
+
+        <ul id="myUL2">
+            <li> <a style="color: white;" href="https://computing.kau.edu.sa/Default-611-EN">
+                    <img src="p1Bgg.png">
+                    <div class="info">
+                        <p>FCIT</p>
+
+                    </div>
+                </a>
+            </li>
+
+        </ul>
+
+
+        <ul id="myUL">
+            <li> <a style="color: white;" href="http://beyadi.net/">
+                    <img src="h.png">
+                    <div class="info">
+                        <p>Take_my_hand</p>
+
+                    </div>
+                </a>
+            </li>
+        </ul>
+
+
+
+        <ul id="myUL3">
+            <li> <a style="color: white;" href="https://twitter.com/fcit_council">
+                    <img src="المجلس الطلابي.png">
+
+                    <div class="info">
+                        <p>Students_Council</p>
+
+                    </div>
+                </a>
+            </li>
+        </ul>
+
+
+        <ul>
+            <li> <a style="color: white;" href="https://www.linkedin.com/in/mohammed-eid-675427189/">
+                    <img src="TEAM (9).png">
+                    <div class="info">
+                        <p>FCIT_Team</p>
+
+                    </div>
+
+                </a>
+            </li>
+        </ul>
+
+
+        <ul>
+            <li> <a style="color: white;" href="https://www.linkedin.com/in/mohammed-eid-675427189/">
+                    <img src="Archry.png">
+                    <div class="info">
+                        <p>Archry_Team</p>
+
+                    </div>
+                </a>
+            </li>
+        </ul>
+
+
+
+
+    </section>
+
+    <script>
+        function search() {
+            var input = document.getElementById('search').value.toLowerCase();
+            var contacts = document.getElementsByTagName('li');
+
+            for (var i = 0; i < contacts.length; i++) {
+                if (contacts[i].innerText.toLowerCase().includes(input)) {
+                    contacts[i].style.display = "block";
+                } else if (!contacts[i].innerText.toLowerCase().includes(input)) {
+                    contacts[i].style.display = "none";
+                    
+                }
+            }
+        }
+    </script>
+
+
+
+    <div class="text-box">
+        <a href="3.html" class="btn btn-white btn-animate">Page 3</a>
+    </div>
+
+    <div class="text-box1">
+        <a href="1.html" class="btn btn-white btn-animate">Page 1</a>
+    </div>
+
+</body>
+
+</html>
